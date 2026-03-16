@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaflet.VectorGrid</title>
+
+    <!-- Hämta in stylesheet från leaflets egna CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <!-- Hämta in Leaflet och tillägget VectorGrid -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"></script>
+
+    <!-- Egna ändringar för CSS -->
+    <style>
+        #map {
+            width: 50%;
+            height: 50%;
+        }
+    </style>
 </head>
 <body>
     
+    <div id="map"></div>
+
+    <script>
+        // Karta som centreras på Sverige
+        const map = L.map('map', {
+            minZoom: 0, // Minsta möjliga zoom, värdet hämtat från JSON-fil
+            maxZoom: 14 // Maximala zoom som är möjlig, värdet hämtat från JSON-fil
+        }).setView([62, 15], 5);
+    </script>
 </body>
 </html>
