@@ -14,9 +14,15 @@
 
     <!-- Egna ändringar för CSS -->
     <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        
         #map {
-            width: 50%;
-            height: 50%;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -27,9 +33,24 @@
     <script>
         // Karta som centreras på Sverige
         const map = L.map('map', {
+            center: [62, 15],
+            zoom: 5,
+            renderer: L.canvas(), // Tvinga till canvas-rendering
             minZoom: 0, // Minsta möjliga zoom, värdet hämtat från JSON-fil
             maxZoom: 14 // Maximala zoom som är möjlig, värdet hämtat från JSON-fil
-        }).setView([62, 15], 5);
+        })
+
+        const vectorLayer = L.vectorGrid.protobuf(
+            "http://localhost:8080/data/v3/{z}/{x}/{y}.pbf",
+            {
+                vectorTileLayerStyles: {
+                    water: { fill: true, fillColor: "blue", fillOpacity: 0.5 },
+                    landuse: { fill: true, fillColor: "green", fillOpacity: 0.4 }
+                }
+            }
+        );
+
+        vectorLayer.addTo(map);
     </script>
 </body>
 </html>
