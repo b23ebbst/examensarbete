@@ -1,0 +1,13 @@
+{
+    "options": {
+        "paths": {
+            "root": "C:/TileServer",
+            "mbtiles": "C:/TileServer"
+        }
+    },
+    "styles": {
+        "basic": {
+            "style": "C:/TileServer/styles/basic/style.json"
+        }
+    }
+}
