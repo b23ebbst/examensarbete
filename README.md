@@ -30,11 +30,10 @@ För att starta servern navigera via kommandtolken till mappen som TileServer GL
 ```
 tileserver-gl
 ```
-I webbläsaren går du sedan till den localhost-adress som tileservern visas på (mest sannolikt localhost:8080)
+I webbläsaren går du sedan till den localhost-adress som tileservern visas på (port 8080), men observera att den data som visas endast är den exempeldata som redan finns inkluderad i installationen 
 
 ## Kartplattor
-Kartplattor har laddats ner från [OpenMapTiles](https://www.maptiler.com/on-prem-datasets/planet/) och området har begränsats till Sverige för att hålla datamängden 
-tillräckligt stor utan att bli uppta onädigt stor plats på hårddisken
+Kartplattor har laddats ner från [OpenMapTiles](https://www.maptiler.com/on-prem-datasets/planet/) och området har begränsats till Sverige för att hålla datamängden tillräckligt stor utan att uppta allt för stor plats på hårddisken
 
 I samma mapp som TileServer GL ligger skapas en mapp som döps till _data_, och i denna mapp namnges datan för sverige till _sweden.mbtiles_ för enklare hantering
 
@@ -42,17 +41,13 @@ Exempel på hierarkins struktur:
 > C:\tileserver\data\sweden.mbtiles
 
 ### Överför dataset till TileServern
-FÖr att se till att datasetet finns tillgängligt på den egna TileServer GL startas servern om i kommandtolken genom att stänga av servern och sedan åter navigera 
+För att se till att datasetet finns tillgängligt på den egna TileServer GL startas servern om i kommandtolken genom att stänga av servern och sedan åter navigera 
 till mappen som innehåller servern och följt av kommando för att starta servern: 
 ```
 cd C:\TileServer
-tileserver-gl
+tileserver-gl config.json --port 8080
 ```
 
 Nu ska datan för Sverige finnas tillgänglig via localhost-adressen i webbläsaren! 
 
-# Implementation med Leaflet.Vectorgrid
-... 
-
-# Implementation med MapLibre GL JS
-... 
+**OBS!** Det går även bra att starta servern med kommandot `tileserver-gl`, men genom att inkludera `config.json --port 8080` säkerställs det att config-filen används och att det serveras på port 8080
