@@ -9,5 +9,14 @@
         "basic": {
             "style": "C:/TileServer/styles/basic/style.json"
         }
+    },
+    "data": {
+        "sweden": {
+            "mbtiles": "C:/TileServer/sweden-mbtiles",
+            "maxzoom": 14,
+            "format": "pbf",
+            "name": "sweden",
+            "description": "Sweden vector tiles"
+        }
     }
 }
