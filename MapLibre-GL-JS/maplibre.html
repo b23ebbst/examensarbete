@@ -32,10 +32,70 @@
                 sources: {
                     sweden: {
                         type: "vector",
-                        tiles: ["http://localhost:8080/data/sweden/{z}/{x}/{y}.pbf"] //Länk till mina lokala plattor
+                        tiles: ["http://localhost:8080/data/sweden/{z}/{x}/{y}.pbf"], //Länk till mina lokala plattor
+                        minzoom: 0,
+                        maxzoom: 14
                     }
-                }
-            }, 
+                },
+                layers: [
+                    {
+                        id: "water",
+                        type: "fill",
+                        source: "sweden",
+                        "source-layer": "water",
+                        paint: {
+                            "fill-color": "blue"
+                        }
+                    },
+                    {
+                        id: "landuse",
+                        type: "fill",
+                        source: "sweden",
+                        "source-layer": "landuse", 
+                        paint: {
+                            "fill-color": "green"
+                        }
+                    },
+                    {
+                        id: "landcover",
+                        type: "fill",
+                        source: "sweden",
+                        "source-layer": "landcover",
+                        paint: {
+                            "fill-color": "green"
+                        }
+                    }, 
+                    {
+                        id: "park",
+                        type: "fill",
+                        source: "sweden",
+                        "source-layer": "park",
+                        paint: {
+                            "fill-color": "green"
+                        }
+                    },
+                    {
+                        id: "roads",
+                        type: "line",
+                        source: "sweden",
+                        "source-layer": "transportation",
+                        paint: {
+                            "line-color": "black",
+                            "line-width": 1
+                        }
+                    },
+                    {
+                        id: "buildings",
+                        type: "fill",
+                        source: "sweden",
+                        "source-layer": "building",
+                        paint: {
+                            "fill-color": "gray",
+                            "fill-outline-color": "black"
+                        }
+                    }
+                ]
+            },
             center: [15, 62], // Startposition [lang, lat]
             zoom: 9 // Zoomnivå, utgångsläge
         });
