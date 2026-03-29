@@ -8,6 +8,19 @@
     <!-- Hämta in MapLibre GL JS och stylesheet -->
     <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script>
     <link href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' rel='stylesheet' />
+
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <div id='map' style='width: 400px; height: 300px;'></div>
@@ -15,7 +28,7 @@
         var map = new maplibregl.Map({
             container: 'map',
             style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
-            center: [62, 15], // Startposition [lang, lat]
+            center: [15, 62], // Startposition [lang, lat]
             zoom: 9 // Zoomnivå, utgångsläge
         });
     </script>
