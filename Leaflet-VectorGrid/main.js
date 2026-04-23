@@ -6,6 +6,7 @@
             minZoom: 0, // Minsta möjliga zoom, värdet hämtat från JSON-fil
             maxZoom: 14 // Maximala zoom som är möjlig, värdet hämtat från JSON-fil
         })
+        window.benchmarkMap = map;
 
         const vectorLayer = L.vectorGrid.protobuf(
             "http://localhost:8080/data/sweden/{z}/{x}/{y}.pbf",
