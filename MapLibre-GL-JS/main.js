@@ -98,3 +98,4 @@ const map = new maplibregl.Map({
     center: [18.35, 57.55],
     zoom: 9
 });
+window.benchmarkMap = map;
